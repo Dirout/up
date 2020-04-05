@@ -11,7 +11,8 @@
     "posts"
   ],
   "include": [
-    ".htaccess"
+    "./.htaccess",
+    "./files"
   ],
   "exclude": [],
   "keep_files": [
