@@ -10,7 +10,7 @@
 
 <script>
 	$(document).ready(function(){
-		$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents/files?ref=gh-pages", function(result) {
+		$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents/css?ref=gh-pages", function(result) {
 			$.each(result, function(i, item){
 				var $path_rest = item.path.replace(item.name, "");
 
@@ -27,7 +27,7 @@
 								console.log(f_result.message);
 								var $file_url = "data:application/octet-stream;base64," + $file_base64;
 								console.log($file_url);
-								console.log("https://MadeByEmil.github.io/files" + $path_rest + item.name);
+								console.log("https://MadeByEmil.github.io/css" + $path_rest + item.name);
 
 								$("ul").append('<p>◾ <text class="small">' + $path_rest + '</text><a id="' + item.sha + '-file_link" class="active" href="' + $file_url + '"' + 'title="' + "SHA of Git commit: " + item.sha + '" download="' + item.name + '" target="_blank" type="application/octet-stream">' + item.name + '</a>' + ' - <strong>' + item['type'] + '</strong><text class="small"> [' + item.size + ' characters, ' + filesize(item.size, {standard: "iec", fullform: true, round: 3, base: 2}) + ']</text>' + '</li></p>')
 						} else {
