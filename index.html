@@ -20,16 +20,16 @@
 							if(!Array.isArray(f_result))
 							{
 								var $file_base64 = f_result.content.replace("\n", "");
-								
+
 								console.log(f_result.name);
 								console.log(f_result.message);
 								var $file_url = "data:application/octet-stream;base64," + $file_base64;
 								console.log($file_url);
-								console.log("https://MadeByEmil.github.io/" + $path_rest + item.name);
+								console.log("https://MadeByEmil.github.io/up/" + $path_rest + item.name);
 
 								$("ul").append('<p>◾ <text class="small">' + $path_rest + '</text><a id="' + item.sha + '-file_link" class="active" href="' + $file_url + '"' + 'title="' + "SHA of Git commit: " + item.sha + '" download="' + item.name + '" target="_blank" type="application/octet-stream">' + item.name + '</a>' + ' - <strong>' + item['type'] + '</strong><text class="small"> [' + item.size + ' characters, ' + filesize(item.size, {standard: "iec", fullform: true, round: 3, base: 2}) + ']</text>' + '</li></p>')
 						} else {
-							var $file_url = "https://MadeByEmil.github.io/" + $path_rest + item.name;
+							var $file_url = "https://MadeByEmil.github.io/up/" + $path_rest + item.name;
 							console.log($file_url);
 							$("ul").append('<p>◾ <text class="small">' + $path_rest + '</text><a id="' + item.sha + '-file_link" class="active" href="' + $file_url + '"' + 'title="' + "SHA of Git commit: " + item.sha + '">' + item.name + '</a>' + ' - <strong>' + item['type'] + '</strong>' + '</li></p>')
 						}
@@ -37,16 +37,18 @@
 						})
 
 					} else {
-						var $file_url = "https://MadeByEmil.github.io/" + $path_rest + item.name;
+						var $file_url = "https://MadeByEmil.github.io/up/" + $path_rest + item.name;
 						console.log($file_url);
 						$("ul").append('<p>◾ <text class="small">' + $path_rest + '</text><a id="' + item.sha + '-file_link" class="active" href="' + $file_url + '"' + 'title="' + "SHA of Git commit: " + item.sha + '" download="' + item.name + '" target="_blank" type="application/octet-stream">' + item.name + '</a>' + ' - <strong>' + item['type'] + '</strong><text class="small"> [' + item.size + ' characters, ' + filesize(item.size, {standard: "iec", fullform: true, round: 3, base: 2}) + ']</text>' + '</li></p>')
 					}
+				} else {
+					return;
 				}
 
-				var colors = ['#222', '#666', 'rgb(255,59,48)', 'rgb(255,149,0)', 'rgb(0,122,255)', 'rgb(88,86,214)', 'rgb(255,45,85)'];
-				var randomColor = colors[Math.floor(Math.random() * colors.length)];
-				$('a:link, a:visited, a:hover, a:active').css('color', randomColor);
 			});
+			var colors = ['#222', '#666', 'rgb(255,59,48)', 'rgb(255,149,0)', 'rgb(0,122,255)', 'rgb(88,86,214)', 'rgb(255,45,85)'];
+			var randomColor = colors[Math.floor(Math.random() * colors.length)];
+			$('a:link, a:visited, a:hover, a:active').css('color', randomColor);
 		});
 	});
 
