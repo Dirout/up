@@ -8,12 +8,12 @@
 <script src="https://cdn.filesizejs.com/filesize.min.js"></script>
 <script>
 	$(document).ready(function(){
-		$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents/", function(result) {
+		$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents/?ref=gh-pages", function(result) {
 			$.each(result, function(i, item){
 				var $path_rest = item.path.replace(item.name, "");
 
 				if (item.size < 1100000) {
-					$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents/" + item.path, function(f_result) {
+					$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents/" + item.path + "?ref=gh-pages", function(f_result) {
 
 						if(!Array.isArray(f_result))
 						{
@@ -30,7 +30,7 @@
 					} else {
 						var $file_url = "https://MadeByEmil.github.io/" + $path_rest + item.name;
 						console.log($file_url);
-						$("ul").append('<p>◾ <text class="small">' + $path_rest + '</text><a id="' + item.sha + '-file_link" class="active" href="' + $file_url + '"' + 'title="' + "SHA of Git commit: " + item.sha + '">' + item.name + '</a>' + ' - <strong>' + item['type'] + '</strong><text class="small"> [' + item.size + ' characters, ' + filesize(item.size, {standard: "iec", fullform: true, round: 3, base: 2}) + ']</text>' + '</li></p>')
+						$("ul").append('<p>◾ <text class="small">' + $path_rest + '</text><a id="' + item.sha + '-file_link" class="active" href="' + $file_url + '"' + 'title="' + "SHA of Git commit: " + item.sha + '">' + item.name + '</a>' + ' - <strong>' + item['type'] + '</strong>' + '</li></p>')
 					}
 
 					})
