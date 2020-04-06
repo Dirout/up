@@ -27,8 +27,11 @@ public class ChannelManager
     {
       foreach (string directory in Directory.GetDirectories(root))
       {
-        directoryList.Add(directory);
-        getDirectories(directory);
+        if(directory[2] != '.')
+        {
+          directoryList.Add(directory);
+          getDirectories(directory);
+        }
       }
     }
     catch (Exception e)
