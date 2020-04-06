@@ -17,7 +17,7 @@ public class ChannelManager
     string[] directoryArray = directoryList.ToArray();
     foreach(var directory in directoryArray)
     {
-      File.Copy("./index.html", directory + "/index.html", true);
+      File.Copy("./index.html", directory + "/index.html", false);
       Console.WriteLine("Index added to " + directory);
     }
 	}
