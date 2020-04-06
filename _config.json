@@ -14,7 +14,10 @@
     "./.htaccess",
     "./files"
   ],
-  "exclude": [],
+  "exclude": [
+    "./.git",
+    "./.github"
+  ],
   "keep_files": [
     ".git",
     ".svn"
