@@ -22,7 +22,9 @@
   "culture": "en-US",
   "markdown_ext": "markdown,mkdown,mkdn,mkd,md",
   "whitelist": [],
-  "plugins": [],
+  "plugins": [
+    "Up"
+  ],
   "excerpt_separator": "\\n\\n",
   "baseurl": "https://MadeByEmil.github.io/up",
   "show_dir_listing": false,

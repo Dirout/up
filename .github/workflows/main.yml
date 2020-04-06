@@ -27,6 +27,7 @@ jobs:
         cp -avr ./project/* ./
         rm -r ./project/
         ./WDHAN build
+        ./WDHAN serve
     - name: Output current directory listing
       run: |
         cd ./bin/Release/netcoreapp3.1/_site/
