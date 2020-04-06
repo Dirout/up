@@ -13,7 +13,7 @@ public class ChannelManager
 	public void Main(string[] args)
 	{
 		Console.WriteLine("Plugin is ready.");
-    getDirectories("./_site/");
+    getDirectories("./");
     string[] directoryArray = directoryList.ToArray();
     foreach(var directory in directoryArray)
     {
