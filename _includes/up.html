@@ -2,7 +2,7 @@
 
 <script>
 	$(document).ready(function(){
-		$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents/{{ include.dir }}?ref=gh-pages", function(result) {
+		$.getJSON("https://api.github.com/repos/MadeByEmil/up/contents{{ page.path }}?ref=gh-pages", function(result) {
 			$.each(result, function(i, item){
 				var $path_rest = item.path.replace(item.name, "");
 
