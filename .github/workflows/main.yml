@@ -24,8 +24,8 @@ jobs:
     - name: Build project
       run: |
         cd ./bin/Release/netcoreapp3.1
-        ./WDHAN serve ./project
-        ./WDHAN build ./project
+        ./wdhan serve ./project
+        ./wdhan build ./project
     - name: Output current directory listing
       run: |
         cd ./bin/Release/netcoreapp3.1/project/_site/
